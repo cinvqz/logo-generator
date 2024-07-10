@@ -8,7 +8,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "inquirer": "^8.1.2"
+    "inquirer": "^8.2.6"
   },
   "devDependencies": {
     "jest": "^27.0.6"
