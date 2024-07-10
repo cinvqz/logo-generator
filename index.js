@@ -1,6 +1,6 @@
-// index.js
 const inquirer = require('inquirer');
 const fs = require('fs');
+const path = require('path'); 
 const { Triangle, Circle, Square } = require('./lib/shapes');
 
 const questions = [
@@ -45,9 +45,10 @@ inquirer.prompt(questions).then(answers => {
   }
 
   const svg = logoShape.render(text, textColor);
+  const filePath = path.join(__dirname, 'examples', 'logo.svg'); 
 
-  fs.writeFile('logo.svg', svg, err => {
+  fs.writeFile(filePath, svg, err => {
     if (err) throw err;
-    console.log('Generated logo.svg');
+    console.log('Generated logo.svg in examples folder');
   });
 });
